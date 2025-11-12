@@ -12,5 +12,3 @@
   </div>
   <button type="submit" class="btn btn-primary" name="submit">Upload</button>
 </form>
-
-<?php include 'footer.php'; ?>

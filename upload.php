@@ -6,7 +6,7 @@ $file_name = basename($_FILES['fileToUpload']['name']);
 $ext = pathinfo($file_name, PATHINFO_EXTENSION);
 if ($ext != 'csv') {
   $_SESSION['error'] = 'Please upload a csv file';
-  header('Location: form-upload-file.php');
+  header('Location: index.php');
   die();
 }
 unset($_SESSION['error']);

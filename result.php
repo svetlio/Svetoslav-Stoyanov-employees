@@ -26,14 +26,13 @@ if (($handle) !== FALSE) {
         if ($c == 3 && $data_src[3] == 'NULL') {
           $data_src[$c] = date('Y-m-d', time());
         }
+
         // Prepare temporary row.
         $row[] = $data_src[$c];
       }
-
-      // ToDo: exclude row if DateFrom or DateTo is strtotime false
     }
 
-    if ($row_num > 1) { // skip labels
+    if ($row_num > 1 && validateRow($row)) { // skip labels
       // Create temp data.
       $data[$data_src[1]][] = $row;
     }
@@ -69,6 +68,15 @@ usort($valid_pairs, function ($a, $b) {
 });
 
 $first = current($valid_pairs);
+
+function validateRow($row) {
+  $ret = TRUE;
+  if (strtotime($row[2]) === FALSE || strtotime($row[3]) === FALSE) {
+    $ret = FALSE;
+  }
+  return $ret;
+}
+
 /**
  * Find all pairs in array.
  * @param $arr
