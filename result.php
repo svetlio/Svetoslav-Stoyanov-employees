@@ -125,7 +125,7 @@ function getIntersection($start_1, $end_1, $start_2, $end_2)
 
 File: <?php print $file_name; ?>
 <hr />
-<p>Task result: <?php print $first['pair'][0][0] . ', ' . $first['pair'][1][0] . ', ' . $first['days']; ?></p>
+<p><?php print $first['pair'][0][0] . ', ' . $first['pair'][1][0] . ', ' . $first['days']; ?></p>
 
 <table class="table table-primary table-bordered">
   <thead>
